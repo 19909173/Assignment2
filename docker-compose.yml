@@ -16,6 +16,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     links:
       - api
 
@@ -25,6 +26,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./api:/app
+      - /app/node_modules
     links:
       - db
 
