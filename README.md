@@ -61,7 +61,7 @@ postgres=# select * from contacts;
    ```
 Replace `container_ID` with the actual ID of the container you want to execute.
 
-## Executing API
+## Executing API Task 2
 
 ### Contact API
 
@@ -116,3 +116,60 @@ http delete http://localhost/api/contacts/2/phones/2
 http put http://localhost/api/contacts/2/phones/6 number="0987654321"
 ```
 ![Image](images/phoneput.png)
+
+
+## Executing API Task 3
+
+### Contact API
+
+
+1. Add contacts API  (POST)
+```bash
+http post http://localhost/api/contacts name="Charli" address="1 asdf st"
+```
+![Image](images/contactspost3.png)
+2 Get contacts API  (GET)
+
+```bash
+http get http://localhost/api/contacts
+```
+
+![Image](images/contactsget3.png)
+
+3. Show/create the API commmand to delete the contacts (DELETE)
+
+```bash
+http delete http://localhost/api/contacts/2
+```
+![Image](images/contactsdelete3.png)
+
+4. Show/create the API command to edit the contacts (PUT)
+```
+http put http://localhost/api/contacts/1 address="9 fdsa rd"
+```
+![Image](images/contactsput3.png)
+
+### Phone API
+1. Get Phones 
+```
+http get http://localhost/api/contacts/1/phones
+```
+![Image](images/phoneget3.png)
+
+2. Add Phones 
+```
+http post http://localhost/api/contacts/1/phones phone_type="Home" phone_number="1234567890"
+```
+![Image](images/phonepost3.png)
+
+3. Delete Phones 
+```
+http delete http://localhost/api/contacts/1/phones/8
+```
+![Image](images/phonedelete3.png)
+
+4. Update Phones 
+```
+http put http://localhost/api/contacts/1/phones/7 phone_number="0987654321"
+```
+![Image](images/phoneput3.png)
