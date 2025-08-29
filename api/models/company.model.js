@@ -16,7 +16,9 @@ module.exports = (sequelize, Sequelize) => {
             references: {
                 model: 'contacts',
                 key: 'id',
-            }
+            },
+            allowNull: true,     
+            defaultValue: null 
         }
     });
 

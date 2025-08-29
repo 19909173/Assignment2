@@ -1,17 +1,16 @@
 const db = require("../models");
-const Contacts = db.contacts;
-const Phones = db.phones;
 const Company = db.company;
 const Op = db.Sequelize.Op;
 
 // Create contact
 exports.create = (req, res) => {
-    const contact = {
-        name: req.body.name,
-        address: req.body.address,
+    const  company= {
+        company_name: req.body.company_name,
+        company_address: req.body.company_address,
+        contact_id:  req.body.contact_id ? parseInt(req.body.contact_id) : null
     };
 
-    Contacts.create(contact)
+    Company.create(company)
         .then(data => {
             res.send(data);
         })
@@ -23,9 +22,9 @@ exports.create = (req, res) => {
         });
 };
 
-// Get all contacts
+// Get all company
 exports.findAll = (req, res) => {
-    Contacts.findAll()
+    Company.findAll()
         .then(data => {
             res.send(data);
         })
@@ -40,13 +39,13 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.contactId;
 
-    Contacts.findByPk(id)
+    Company.findByPk(id)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Contact with id=" + id
+                message: "Error retrieving Company with id=" + id
             });
         }
     );
@@ -56,56 +55,49 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
     const id = req.params.contactId;
 
-    Contacts.update(req.body, {
+    Company.update(req.body, {
         where: { id: id }
     })
     .then(num => {
         if (num == 1) {
             res.send({
-                message: "Contact was updated successfully."
+                message: "Company was updated successfully."
             });
         } else {
             res.send({
-                message: `Cannot update Contact`
+                message: `Cannot update Company`
             });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Error updating Contact with id=" + id
+            message: "Error updating Company with id=" + id
         });
     });
 };
 
 // Delete one contact by id
 exports.delete = (req, res) => {
-    const id = parseInt(req.params.contactId);
+    const id = parseInt(req.params.companyId);
 
-    Phones.destroy({
-        where: { contactId: id }
-    })
     Company.destroy({
-        where: { contactId: id }
+        where: { id: id }
     })
     .then(num => {
-        Contacts.destroy({
-            where: { id: id }
-        })
-        .then(num => {
-            if (num == 1) {
-                res.send({
-                    message: "Contact was deleted successfully!"
-                });
-            } else {
-                res.send({
-                    message: `Cannot delete Contact`
-                });
-            }
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: "Could not delete Contact with id=" + id
+        if (num == 1) {
+            res.send({
+                message: "Company was deleted successfully!"
             });
+        } else {
+            res.send({
+                message: `Cannot delete Company`
+            });
+        }
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: "Could not delete Company with id=" + id
         });
     });
+
 };
