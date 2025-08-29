@@ -68,71 +68,51 @@ Replace `container_ID` with the actual ID of the container you want to execute.
 
 1. Add contacts API  (POST)
 ```bash
-http post http://localhost/api/contacts name="Choiru"
-        
-choiruzain@MacMarichoy-7 TestSystem % http post http://localhost/api/contacts name="Choiru"
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://localhost:3000
-Connection: keep-alive
-Content-Length: 102
-Content-Type: application/json; charset=utf-8
-Date: Thu, 08 Aug 2024 21:01:53 GMT
-ETag: W/"66-FmPYAaIkyQoroDwP2JsAZjWTAxs"
-Server: nginx/1.25.1
-Vary: Origin
-X-Powered-By: Express
-
-{
-"createdAt": "2024-08-08T21:01:53.017Z",
-"id": 1,
-"name": "Choiru",
-"updatedAt": "2024-08-08T21:01:53.017Z"
-}
-
+http post http://localhost/api/contacts name="Charli"
 ```
+![Image](images/contactspost.png)
 2 Get contacts API  (GET)
 
 ```bash
 http get http://localhost/api/contacts
-
-
-choiruzain@MacMarichoy-7 TestSystem % http get http://localhost/api/contacts
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://localhost:3000
-Connection: keep-alive
-Content-Length: 104
-Content-Type: application/json; charset=utf-8
-Date: Thu, 08 Aug 2024 21:04:58 GMT
-ETag: W/"68-V+4KuL2xahYt8YAkKG6rKdR7wHg"
-Server: nginx/1.25.1
-Vary: Origin
-X-Powered-By: Express
-
-[
-{
-"createdAt": "2024-08-08T21:01:53.017Z",
-"id": 1,
-"name": "Choiru",
-"updatedAt": "2024-08-08T21:01:53.017Z"
-}
-]
-
-
 ```
+
+![Image](images/contactsget.png)
+
 3. Show/create the API commmand to delete the contacts (DELETE)
 
 ```bash
-
-
-
-
-
+http delete http://localhost/api/contacts/4
 ```
+![Image](images/contactsdelete.png)
 
 4. Show/create the API command to edit the contacts (PUT)
 ```
-http get http://localhost/api/contacts/1/phones
-
+http put http://localhost/api/contacts/2 name="Charli"
 ```
+![Image](images/contactsput.png)
 
 ### Phone API
+1. Get Phones 
+```
+http get http://localhost/api/contacts/2/phones
+```
+![Image](images/phoneget.png)
+
+2. Add Phones 
+```
+http post http://localhost/api/contacts/2/phones name="Angus" number="1234567890"
+```
+![Image](images/phonepost.png)
+
+3. Delete Phones 
+```
+http delete http://localhost/api/contacts/2/phones/2
+```
+![Image](images/phonedelete.png)
+
+4. Update Phones 
+```
+http put http://localhost/api/contacts/2/phones/6 number="0987654321"
+```
+![Image](images/phoneput.png)
