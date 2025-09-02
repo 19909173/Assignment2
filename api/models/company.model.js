@@ -11,14 +11,12 @@ module.exports = (sequelize, Sequelize) => {
         company_address: {
             type: Sequelize.STRING,
         },
-        contact_id:{
+        contactId:{
             type: Sequelize.INTEGER,
             references: {
                 model: 'contacts',
                 key: 'id',
             },
-            allowNull: true,     
-            defaultValue: null 
         }
     });
 

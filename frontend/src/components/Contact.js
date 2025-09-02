@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';  // import useEffect
 import PhoneList from './PhoneList.js';
+import CompanyList from './CompanyList.js';
 
 function Contact(props) {
     const {contact, contacts, setContacts} = props;
     const [expanded, setExpanded] = useState(false);
     const [phones, setPhones] = useState([]);
+    const [companies, setCompany] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost/api/contacts/' + contact.id + '/phones')
@@ -13,7 +15,13 @@ function Contact(props) {
             .catch((error) => {
                 console.error('Error:', error);
             });
-    }, []);
+        fetch('http://localhost/api/contacts/' + contact.id + '/company')
+            .then(response => response.json())
+            .then(data => setCompany(data))
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, [contact.id]);
 
     const expandStyle = {
         display: expanded ? 'block' : 'none'
@@ -44,6 +52,10 @@ function Contact(props) {
             <div style={expandStyle}>
                 <hr />
                 <PhoneList phones={phones} setPhones={setPhones} contact={contact} />
+            </div>
+            <div style={expandStyle}>
+                <hr />
+                <CompanyList companies={companies} setCompany={setCompany} contact={contact} />
             </div>
         </div>
     );
