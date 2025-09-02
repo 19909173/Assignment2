@@ -158,18 +158,18 @@ http get http://localhost/api/contacts/1/phones
 
 2. Add Phones 
 ```
-http post http://localhost/api/contacts/1/phones phone_type="Home" phone_number="1234567890"
+http post http://localhost/api/contacts/1/phones phone_type="work" phone_number="0987654321"
 ```
 ![Image](images/phonepost3.png)
 
 3. Delete Phones 
 ```
-http delete http://localhost/api/contacts/1/phones/8
+http delete http://localhost/api/contacts/1/phones/2
 ```
 ![Image](images/phonedelete3.png)
 
 4. Update Phones 
 ```
-http put http://localhost/api/contacts/1/phones/7 phone_number="0987654321"
+http put http://localhost/api/contacts/1/phones/1 phone_number="0987654321"
 ```
 ![Image](images/phoneput3.png)
