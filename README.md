@@ -202,3 +202,9 @@ http put http://localhost/api/contacts/1/company/3 company_name="Uni"
 ![Image](images/companyput.png)
 
 ## Task 5
+![Image](images/task5base.png)
+
+The Company addition for task 5 was a little unclear but was based off of the phone components due to the need for the contact id.
+![Image](images/task5deleted.png)
+![Image](images/task5new.png)
+![Image](images/task5new2.png)
