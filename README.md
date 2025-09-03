@@ -82,38 +82,38 @@ http get http://localhost/api/contacts
 3. Show/create the API commmand to delete the contacts (DELETE)
 
 ```bash
-http delete http://localhost/api/contacts/4
+http delete http://localhost/api/contacts/3
 ```
 ![Image](images/contactsdelete.png)
 
 4. Show/create the API command to edit the contacts (PUT)
 ```
-http put http://localhost/api/contacts/2 name="Charli"
+http put http://localhost/api/contacts/1 name="Eddie"
 ```
 ![Image](images/contactsput.png)
 
 ### Phone API
 1. Get Phones 
 ```
-http get http://localhost/api/contacts/2/phones
+http get http://localhost/api/contacts/1/phones
 ```
 ![Image](images/phoneget.png)
 
 2. Add Phones 
 ```
-http post http://localhost/api/contacts/2/phones name="Angus" number="1234567890"
+http post http://localhost/api/contacts/1/phones name="Work" number="0987654321"
 ```
 ![Image](images/phonepost.png)
 
 3. Delete Phones 
 ```
-http delete http://localhost/api/contacts/2/phones/2
+http delete http://localhost/api/contacts/1/phones/3
 ```
 ![Image](images/phonedelete.png)
 
 4. Update Phones 
 ```
-http put http://localhost/api/contacts/2/phones/6 number="0987654321"
+http put http://localhost/api/contacts/1/phones/1 number="0987654321"
 ```
 ![Image](images/phoneput.png)
 
