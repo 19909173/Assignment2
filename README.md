@@ -202,9 +202,21 @@ http put http://localhost/api/contacts/1/company/3 company_name="Uni"
 ![Image](images/companyput.png)
 
 ## Task 5
-![Image](images/task5base.png)
-
 The Company addition for task 5 was a little unclear but was based off of the phone components due to the need for the contact id.
+![Image](images/task5base.png)
 ![Image](images/task5deleted.png)
 ![Image](images/task5new.png)
 ![Image](images/task5new2.png)
+
+The Forum works like the phone forum however it has been modified to suit the company components needs.
+
+![Image](images/task5component.png)
+
+The new Contact component was modified from a dropdown list to a simple text input.
+The contact component was also modified to allow for the connection to the database to retrive the company data.
+![Image](images/contactcomponet.png)
+
+While the Company and Company List components where based off of the original phone versions they where both modified to fit the new use for company information.
+
+![Image](images/company.png)
+![Image](images/companylist.png)
