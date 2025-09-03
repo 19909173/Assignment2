@@ -173,3 +173,32 @@ http delete http://localhost/api/contacts/1/phones/2
 http put http://localhost/api/contacts/1/phones/1 phone_number="0987654321"
 ```
 ![Image](images/phoneput3.png)
+
+## Task 4
+### Company API
+1. Get Company
+```
+http get http://localhost/api/contacts/1/company
+```
+![Image](images/companyget.png)
+
+2. Add Company
+```
+http post http://localhost/api/contacts/1/company company_name="RMIT" company_address="10 asdf st"
+
+```
+![Image](images/companypost.png)
+
+3. Delete Company 
+```
+http delete http://localhost/api/contacts/1/company/5
+```
+![Image](images/companydelete.png)
+
+4. Update Company
+```
+http put http://localhost/api/contacts/1/company/3 company_name="Uni"
+```
+![Image](images/companyput.png)
+
+## Task 5
